@@ -11,9 +11,20 @@
 
 import random
 
-inNum = int(raw_input('Guess the number:'))
+while True:
+  try:
+    inNum = input("Guess the number: ")
+    inNum = int(inNum)
+    if (1 <= inNum <= 10):
+      break
+    else:
+      print("Sorry, please enter a number between 1 to 10")
+      continue
+  except ValueError:
+    print("Sorry, please enter a number between 1 to 10")
+
 genNum = random.randint(1, 10)
 if (inNum == genNum):
-    print "Correct!"
+    print ("Correct!")
 else:
-    print "Wrong, try again!"
+    print ("Wrong, try again!")
